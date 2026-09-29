@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Playground — CSS Cozy</title>
+<meta name="description" content="Small, fun, self-checking CSS challenges — edit live CSS and watch the preview update instantly.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="container">
+    <a class="brand" href="index.html">
+      <span class="brand-mark"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"></circle><line x1="12" y1="2" x2="12" y2="5"></line><line x1="12" y1="19" x2="12" y2="22"></line><line x1="2" y1="12" x2="5" y2="12"></line><line x1="19" y1="12" x2="22" y2="12"></line><line x1="4.2" y1="4.2" x2="6.3" y2="6.3"></line><line x1="17.7" y1="17.7" x2="19.8" y2="19.8"></line><line x1="4.2" y1="19.8" x2="6.3" y2="17.7"></line><line x1="17.7" y1="6.3" x2="19.8" y2="4.2"></line></svg></span> CSS Cozy
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="learn.html">Learn</a></li>
+      <li><a href="playground.html" class="active">Playground</a></li>
+      <li><a href="newspaper.html">Newspaper</a></li>
+    </ul>
+    <button class="nav-toggle" aria-label="Toggle menu"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+  </div>
+</nav>
+
+<header class="section" style="padding-bottom:0;">
+  <div class="container">
+    <span class="eyebrow">300 challenges · 100 per level</span>
+    <h1 style="font-size:2.4rem;">Playground</h1>
+    <p class="lede" style="max-width:60ch;">
+      Small, fun CSS problems grouped into 10 modules per level. Search to find one, click to open it,
+      edit the CSS, and watch the live preview — each challenge checks itself, so you'll know the moment you've got it.
+    </p>
+  </div>
+</header>
+
+<section class="section">
+  <div class="container">
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="beginner">Beginner</button>
+      <button class="tab-btn" data-tab="intermediate">Intermediate</button>
+      <button class="tab-btn" data-tab="advanced">Advanced</button>
+    </div>
+
+    <div class="tab-panel active" id="beginner">
+      <div class="lessons-toolbar">
+        <input type="search" class="lesson-search" id="beginnerChallengeSearch" placeholder="Search 100 beginner challenges…" aria-label="Search beginner challenges">
+        <span class="lesson-count" id="beginnerChallengeCount">100 tasks</span>
+      </div>
+      <div class="module-nav" id="beginnerChallengeModuleNav" aria-label="Jump to module"></div>
+      <div id="beginnerChallengeList"></div>
+    </div>
+
+    <div class="tab-panel" id="intermediate">
+      <div class="lessons-toolbar">
+        <input type="search" class="lesson-search" id="intermediateChallengeSearch" placeholder="Search 100 intermediate challenges…" aria-label="Search intermediate challenges">
+        <span class="lesson-count" id="intermediateChallengeCount">100 tasks</span>
+      </div>
+      <div class="module-nav" id="intermediateChallengeModuleNav" aria-label="Jump to module"></div>
+      <div id="intermediateChallengeList"></div>
+    </div>
+
+    <div class="tab-panel" id="advanced">
+      <div class="lessons-toolbar">
+        <input type="search" class="lesson-search" id="advancedChallengeSearch" placeholder="Search 100 advanced challenges…" aria-label="Search advanced challenges">
+        <span class="lesson-count" id="advancedChallengeCount">100 tasks</span>
+      </div>
+      <div class="module-nav" id="advancedChallengeModuleNav" aria-label="Jump to module"></div>
+      <div id="advancedChallengeList"></div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>made by @NanouuSymeon</span>
+    <ul class="footer-links">
+      <li><a href="learn.html">Learn</a></li>
+      <li><a href="playground.html">Playground</a></li>
+      <li><a href="newspaper.html">Newspaper</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script src="js/stages.js"></script>
+<script src="js/rules-engine.js"></script>
+<script src="js/challenges-beginner.js"></script>
+<script src="js/challenges-intermediate.js"></script>
+<script src="js/challenges-advanced.js"></script>
+<script src="js/playground.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

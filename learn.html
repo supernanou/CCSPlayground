@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Learn CSS — CSS Cozy</title>
+<meta name="description" content="CSS lessons from beginner to advanced: selectors, the box model, flexbox, grid, custom properties, animation and more.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="container">
+    <a class="brand" href="index.html">
+      <span class="brand-mark"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"></circle><line x1="12" y1="2" x2="12" y2="5"></line><line x1="12" y1="19" x2="12" y2="22"></line><line x1="2" y1="12" x2="5" y2="12"></line><line x1="19" y1="12" x2="22" y2="12"></line><line x1="4.2" y1="4.2" x2="6.3" y2="6.3"></line><line x1="17.7" y1="17.7" x2="19.8" y2="19.8"></line><line x1="4.2" y1="19.8" x2="6.3" y2="17.7"></line><line x1="17.7" y1="6.3" x2="19.8" y2="4.2"></line></svg></span> CSS Cozy
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="learn.html" class="active">Learn</a></li>
+      <li><a href="playground.html">Playground</a></li>
+      <li><a href="newspaper.html">Newspaper</a></li>
+    </ul>
+    <button class="nav-toggle" aria-label="Toggle menu"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+  </div>
+</nav>
+
+<header class="section" style="padding-bottom:0;">
+  <div class="container">
+    <span class="eyebrow">300 lessons · 100 per level</span>
+    <h1 style="font-size:2.4rem;">Learn CSS</h1>
+    <p class="lede" style="max-width:60ch;">
+      Pick a level below. Each lesson is a short, self-contained read grouped into 10 modules —
+      search to jump straight to a topic, click to expand, then head to the
+      <a href="playground.html">playground</a> to practice it.
+    </p>
+  </div>
+</header>
+
+<section class="section">
+  <div class="container">
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="beginner">Beginner</button>
+      <button class="tab-btn" data-tab="intermediate">Intermediate</button>
+      <button class="tab-btn" data-tab="advanced">Advanced</button>
+    </div>
+
+    <!-- ============ BEGINNER ============ -->
+    <div class="tab-panel active" id="beginner">
+      <div class="lessons-toolbar">
+        <input type="search" class="lesson-search" id="beginnerSearch" placeholder="Search 100 beginner lessons…" aria-label="Search beginner lessons">
+        <span class="lesson-count" id="beginnerCount">100 lessons</span>
+      </div>
+      <div class="module-nav" id="beginnerModuleNav" aria-label="Jump to module"></div>
+      <div id="beginnerList"></div>
+    </div>
+
+    <!-- ============ INTERMEDIATE ============ -->
+    <div class="tab-panel" id="intermediate">
+      <div class="lessons-toolbar">
+        <input type="search" class="lesson-search" id="intermediateSearch" placeholder="Search 100 intermediate lessons…" aria-label="Search intermediate lessons">
+        <span class="lesson-count" id="intermediateCount">100 lessons</span>
+      </div>
+      <div class="module-nav" id="intermediateModuleNav" aria-label="Jump to module"></div>
+      <div id="intermediateList"></div>
+    </div>
+
+    <!-- ============ ADVANCED ============ -->
+    <div class="tab-panel" id="advanced">
+      <div class="lessons-toolbar">
+        <input type="search" class="lesson-search" id="advancedSearch" placeholder="Search 100 advanced lessons…" aria-label="Search advanced lessons">
+        <span class="lesson-count" id="advancedCount">100 lessons</span>
+      </div>
+      <div class="module-nav" id="advancedModuleNav" aria-label="Jump to module"></div>
+      <div id="advancedList"></div>
+    </div>
+
+  </div>
+</section>
+
+<section class="section section-alt center-text">
+  <div class="container">
+    <h2>Ready to practice?</h2>
+    <p style="max-width:50ch; margin-left:auto; margin-right:auto;">Every topic above has a matching hands-on challenge waiting in the playground.</p>
+    <a class="btn btn-primary" href="playground.html">Go to the playground →</a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>made by @NanouuSymeon</span>
+    <ul class="footer-links">
+      <li><a href="learn.html">Learn</a></li>
+      <li><a href="playground.html">Playground</a></li>
+      <li><a href="newspaper.html">Newspaper</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script src="js/data-beginner.js"></script>
+<script src="js/data-intermediate.js"></script>
+<script src="js/data-advanced.js"></script>
+<script src="js/learn.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
