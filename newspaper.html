@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>The CSS Times — CSS Cozy</title>
+<title>The CSS Times — CSS Arcade</title>
 <meta name="description" content="A monthly newspaper for CSS people: new features, tips, and browser support news.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,12 +15,13 @@
 <nav class="site-nav">
   <div class="container">
     <a class="brand" href="index.html">
-      <span class="brand-mark"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"></circle><line x1="12" y1="2" x2="12" y2="5"></line><line x1="12" y1="19" x2="12" y2="22"></line><line x1="2" y1="12" x2="5" y2="12"></line><line x1="19" y1="12" x2="22" y2="12"></line><line x1="4.2" y1="4.2" x2="6.3" y2="6.3"></line><line x1="17.7" y1="17.7" x2="19.8" y2="19.8"></line><line x1="4.2" y1="19.8" x2="6.3" y2="17.7"></line><line x1="17.7" y1="6.3" x2="19.8" y2="4.2"></line></svg></span> CSS Cozy
+      <span class="brand-mark"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"></circle><line x1="12" y1="2" x2="12" y2="5"></line><line x1="12" y1="19" x2="12" y2="22"></line><line x1="2" y1="12" x2="5" y2="12"></line><line x1="19" y1="12" x2="22" y2="12"></line><line x1="4.2" y1="4.2" x2="6.3" y2="6.3"></line><line x1="17.7" y1="17.7" x2="19.8" y2="19.8"></line><line x1="4.2" y1="19.8" x2="6.3" y2="17.7"></line><line x1="17.7" y1="6.3" x2="19.8" y2="4.2"></line></svg></span> CSS Arcade
     </a>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="learn.html">Learn</a></li>
       <li><a href="playground.html">Playground</a></li>
+      <li><a href="blueprint.html">Blueprint</a></li>
       <li><a href="newspaper.html" class="active">Newspaper</a></li>
     </ul>
     <button class="nav-toggle" aria-label="Toggle menu"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
@@ -31,127 +32,24 @@
   <div class="container">
     <h1>The CSS Times</h1>
     <p class="tagline">News, tips &amp; small joys for the modern stylesheet</p>
-    <div class="issue-line">
-      <span>Issue No. 1</span>
-      <span>October 2026</span>
-      <span>cssCozy.dev/newspaper</span>
-    </div>
   </div>
 </div>
 
 <div class="container">
-  <div class="archive-strip" aria-label="Past issues">
-    <span class="archive-pill current">Oct 2026</span>
-  </div>
 
-  <div class="news-layout">
-    <main class="news-main">
+  <section class="issue-picker" id="issuePicker">
+    <div class="issue-picker-head">
+      <h2>Pick an issue</h2>
+      <p>Choose a month to read that issue's articles.</p>
+    </div>
+    <div class="archive-strip" aria-label="Newsletter issues">
+      <button type="button" class="archive-pill current" data-issue="issue-oct-2026">Oct 2026</button>
+    </div>
 
-      <article>
-        <span class="news-kicker">Front page</span>
-        <h2>Why it's worth learning CSS in 2026</h2>
-        <p class="news-byline">By the CSS Cozy editors</p>
-        <p class="drop-cap">
-          Frameworks come and go — this year's favorite is next year's legacy migration —
-          but CSS keeps quietly absorbing the jobs those frameworks used to do for you.
-          <code>:has()</code> gives you a real parent selector. Container queries make a
-          component responsive to its own box, not the viewport. Native nesting removes the
-          last good excuse for a preprocessor. Anchor positioning kills an entire category of
-          tooltip and popover JavaScript. None of that requires a build step, a bundle, or a
-          dependency you'll be patching in three years.
-        </p>
-        <p>
-          The practical case is just as strong as the philosophical one. CSS now runs more of
-          the UI on the compositor thread instead of the main thread, which means the
-          animations and layout shifts you used to hand-roll in JavaScript are both less code
-          and measurably smoother. And because CSS you write today still works in ten years, time spent
-          getting genuinely good at it keeps paying out, long after this month's framework has
-          been replaced by next month's.
-        </p>
-        <p>
-          It's also still the most underrated skill on most teams. Plenty of developers can
-          ship a feature in React or Vue and still fight the box model to center a div. Real CSS
-          fluency — knowing the cascade, layout systems, and what's shipped natively — is a
-          small investment that keeps setting you apart.
-        </p>
-      </article>
-
-      <article>
-        <span class="news-kicker">Layout</span>
-        <h2>Anchor positioning graduates to the mainstream</h2>
-        <p class="news-byline">By the CSS Cozy editors</p>
-        <p>
-          For years, positioning a tooltip next to a button meant reaching for JavaScript.
-          CSS anchor positioning changes that: with <code>anchor-name</code> on one element
-          and <code>position-anchor</code> on another, the browser handles the geometry —
-          including flipping sides when the tooltip would run off-screen. It's one of those
-          features that quietly removes an entire category of bugs.
-        </p>
-        <p>
-          The takeaway for learners: layout is steadily moving from "calculate positions in
-          script" to "describe relationships and let CSS solve them." Flexbox and Grid started
-          that trend; anchor positioning continues it.
-        </p>
-      </article>
-
-      <article>
-        <span class="news-kicker">Color</span>
-        <h2>color-mix() becomes the go-to for quick theming</h2>
-        <p class="news-byline">Community roundup</p>
-        <p>
-          Need a hover state that's "20% darker" without hand-picking a new hex value?
-          <code>color-mix(in oklch, var(--brand) 80%, black)</code> does exactly that, live in
-          the stylesheet. Designers are using it to generate entire shade ramps from a single
-          brand color — no build step, no Sass function required.
-        </p>
-        <p>
-          It pairs neatly with custom properties: define one <code>--brand</code>, then mix it
-          for every hover, active, and disabled state you need.
-        </p>
-      </article>
-
-      <article>
-        <span class="news-kicker">Motion</span>
-        <h2>Scroll-driven animations land everywhere</h2>
-        <p class="news-byline">By the CSS Cozy editors</p>
-        <p>
-          <code>animation-timeline: scroll()</code> ties an animation's progress to how far
-          the user has scrolled, instead of to elapsed time. Progress bars, reveal-on-scroll
-          sections, and parallax effects that used to need a scroll event listener now run
-          entirely on the compositor thread — smoother, and free of JavaScript jank.
-        </p>
-      </article>
-
-      <article>
-        <span class="news-kicker">Community corner</span>
-        <h2>Reader mailbag: "What should I actually learn first?"</h2>
-        <p class="news-byline">Questions from the CSS Cozy community</p>
-        <p>
-          A recurring question this month: should beginners skip straight to Grid? Our answer —
-          learn the box model and Flexbox first. Grid is wonderful for two-dimensional layout,
-          but most day-to-day UI work (navbars, button groups, form rows) is one-dimensional,
-          and Flexbox intuition transfers directly into Grid later.
-        </p>
-      </article>
-
-    </main>
-
-    <aside class="news-sidebar">
-      <div class="sidebar-box">
-        <h3>In this issue</h3>
-        <ul>
-          <li>Why it's worth learning CSS in 2026</li>
-          <li>Anchor positioning graduates to the mainstream</li>
-          <li>color-mix() for quick theming</li>
-          <li>Scroll-driven animations land everywhere</li>
-          <li>Reader mailbag: what to learn first</li>
-        </ul>
-      </div>
-
-      <div class="tip-of-month">
-        <h3>Tip of the month</h3>
-        <p style="color:#f3e6c4;">Nest without a preprocessor — native CSS nesting shipped across evergreen browsers:</p>
-        <pre>.card {
+    <div class="tip-of-month">
+      <h3>Tip of the month</h3>
+      <p style="color:#f3e6c4;">Nest without a preprocessor — native CSS nesting shipped across evergreen browsers:</p>
+      <pre>.card {
   padding: 1rem;
 
   &amp;:hover {
@@ -162,19 +60,73 @@
     font-weight: 600;
   }
 }</pre>
-      </div>
+    </div>
+  </section>
 
-      <div class="sidebar-box" style="margin-top:24px;">
-        <h3>Browser support corner</h3>
-        <ul>
-          <li><strong>:has()</strong> — all evergreen browsers</li>
-          <li><strong>Container queries</strong> — all evergreen browsers</li>
-          <li><strong>Anchor positioning</strong> — Chromium; check before relying on it in production</li>
-          <li><strong>Scroll-driven animations</strong> — Chromium; provide a fallback</li>
-        </ul>
-      </div>
-    </aside>
-  </div>
+  <section class="issue-detail" id="issue-oct-2026" hidden>
+    <button type="button" class="back-to-issues" data-back>&larr; All issues</button>
+
+    <div class="issue-line">
+      <span>Issue No. 1</span>
+      <span>October 2026</span>
+      <span>cssarcade.dev/newspaper</span>
+    </div>
+
+    <div class="news-layout">
+      <main class="news-main">
+
+        <article>
+          <span class="news-kicker">Front page</span>
+          <h2>Why it's worth learning CSS in 2026</h2>
+          <p class="news-byline">By the CSS Arcade editors</p>
+          <p class="drop-cap">
+            Frameworks come and go — this year's favorite is next year's legacy migration —
+            but CSS keeps quietly absorbing the jobs those frameworks used to do for you.
+            <code>:has()</code> gives you a real parent selector. Container queries make a
+            component responsive to its own box, not the viewport. Native nesting removes the
+            last good excuse for a preprocessor. Anchor positioning kills an entire category of
+            tooltip and popover JavaScript. None of that requires a build step, a bundle, or a
+            dependency you'll be patching in three years.
+          </p>
+          <p>
+            The practical case is just as strong as the philosophical one. CSS now runs more of
+            the UI on the compositor thread instead of the main thread, which means the
+            animations and layout shifts you used to hand-roll in JavaScript are both less code
+            and measurably smoother. And because CSS you write today still works in ten years, time spent
+            getting genuinely good at it keeps paying out, long after this month's framework has
+            been replaced by next month's.
+          </p>
+          <p>
+            It's also still the most underrated skill on most teams. Plenty of developers can
+            ship a feature in React or Vue and still fight the box model to center a div. Real CSS
+            fluency — knowing the cascade, layout systems, and what's shipped natively — is a
+            small investment that keeps setting you apart.
+          </p>
+        </article>
+
+      </main>
+
+      <aside class="news-sidebar">
+        <div class="sidebar-box">
+          <h3>In this issue</h3>
+          <ul>
+            <li>Why it's worth learning CSS in 2026</li>
+          </ul>
+        </div>
+
+        <div class="sidebar-box">
+          <h3>Browser support corner</h3>
+          <ul>
+            <li><strong>:has()</strong> — all evergreen browsers</li>
+            <li><strong>Container queries</strong> — all evergreen browsers</li>
+            <li><strong>Native nesting</strong> — all evergreen browsers</li>
+            <li><strong>Anchor positioning</strong> — Chromium; check before relying on it in production</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </section>
+
 </div>
 
 <footer class="site-footer">
@@ -183,11 +135,13 @@
     <ul class="footer-links">
       <li><a href="learn.html">Learn</a></li>
       <li><a href="playground.html">Playground</a></li>
+      <li><a href="blueprint.html">Blueprint</a></li>
       <li><a href="newspaper.html">Newspaper</a></li>
     </ul>
   </div>
 </footer>
 
 <script src="js/main.js"></script>
+<script src="js/newspaper.js"></script>
 </body>
 </html>

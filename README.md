@@ -1,12 +1,12 @@
-# CSS Cozy
+# CSS Arcade
 
-A warm, minimal corner of the web built for one reason: to help people learn CSS and actually enjoy doing it. No accounts, no build step, no clutter — just lessons, small puzzles that check themselves, and a newspaper for the CSS-curious.
+A warm, minimal corner of the web built for one reason: to help people learn CSS and actually enjoy doing it. No accounts, no build step, no clutter — just lessons, small puzzles that check themselves, a sketch-to-code tool, and a newspaper for the CSS-curious.
 
-![CSS Cozy homepage](screenshots/home.png)
+![CSS Arcade homepage](screenshots/home.png)
 
 ## Why this exists
 
-CSS gets a bad reputation as something you fight rather than something you learn. CSS Cozy tries to flip that: short lessons instead of dense docs, tiny self-checking puzzles instead of a wall of theory, and a butter-yellow, soft-retro look that feels more like a cozy weekend project than a textbook. Beginner through advanced, the goal is the same — make CSS feel approachable and genuinely fun to get good at.
+CSS gets a bad reputation as something you fight rather than something you learn. CSS Arcade tries to flip that: short lessons instead of dense docs, tiny self-checking puzzles instead of a wall of theory, and a butter-yellow, soft-retro look that feels more like a fun weekend project than a textbook. Beginner through advanced, the goal is the same — make CSS feel approachable and genuinely fun to get good at.
 
 ## What's inside
 
@@ -22,9 +22,15 @@ Small, specific CSS problems with a live editor and live preview side by side. E
 
 ![Playground challenge solved, with live preview](screenshots/playground.png)
 
+### Blueprint — sketch to real code
+
+Draw with a pencil, a rectangle, or a circle tool. There's no AI guessing what you meant — freehand strokes become the exact SVG `<path>` you drew, and shapes become real, absolutely-positioned `<div>`s with real CSS (`width`, `height`, `background`, `border-radius`, and so on). The code panel updates live and there's a one-click copy button.
+
+![Blueprint canvas with a rectangle, circle, and freehand line, and the generated code panel](screenshots/blueprint.png)
+
 ### Read — a monthly newspaper
 
-"The CSS Times" — a print-styled newspaper page with articles about new CSS features, tips, and why CSS is still worth learning.
+"The CSS Times" — a print-styled newspaper. Pick an issue by month, read its articles, and a "Tip of the month" box stays visible while you're choosing.
 
 ![The CSS Times newspaper layout](screenshots/newspaper.png)
 
@@ -51,6 +57,7 @@ CCSPlayground/
 ├── index.html            Landing page
 ├── learn.html             Learn page (300 lessons)
 ├── playground.html        Playground page (300 challenges)
+├── blueprint.html          Sketch-to-code tool
 ├── newspaper.html          The CSS Times
 ├── css/
 │   └── style.css           All shared styling
@@ -58,6 +65,8 @@ CCSPlayground/
     ├── main.js               Nav + tab behavior
     ├── learn.js               Renders lessons, search, module navigation
     ├── playground.js          Renders challenges, editor, live preview, grading
+    ├── blueprint.js            Drawing canvas + live code generation
+    ├── newspaper.js            Issue picker / issue detail toggle
     ├── stages.js              Reusable markup/CSS "scenes" for challenges
     ├── rules-engine.js         Declarative rule checker for challenges
     ├── data-*.js               Lesson content (beginner/intermediate/advanced)

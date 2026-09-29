@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Blueprint — CSS Arcade</title>
+<meta name="description" content="Sketch shapes and freehand lines on a canvas and get real, working HTML and CSS back — no AI guessing, just your drawing turned directly into code.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="container">
+    <a class="brand" href="index.html">
+      <span class="brand-mark"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"></circle><line x1="12" y1="2" x2="12" y2="5"></line><line x1="12" y1="19" x2="12" y2="22"></line><line x1="2" y1="12" x2="5" y2="12"></line><line x1="19" y1="12" x2="22" y2="12"></line><line x1="4.2" y1="4.2" x2="6.3" y2="6.3"></line><line x1="17.7" y1="17.7" x2="19.8" y2="19.8"></line><line x1="4.2" y1="19.8" x2="6.3" y2="17.7"></line><line x1="17.7" y1="6.3" x2="19.8" y2="4.2"></line></svg></span> CSS Arcade
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="learn.html">Learn</a></li>
+      <li><a href="playground.html">Playground</a></li>
+      <li><a href="blueprint.html" class="active">Blueprint</a></li>
+      <li><a href="newspaper.html">Newspaper</a></li>
+    </ul>
+    <button class="nav-toggle" aria-label="Toggle menu"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+  </div>
+</nav>
+
+<header class="section" style="padding-bottom:0;">
+  <div class="container">
+    <span class="eyebrow">Sketch to code</span>
+    <h1 style="font-size:2.4rem;">Blueprint</h1>
+    <p class="lede" style="max-width:60ch;">
+      Draw with a pencil, a box, or a circle. What you draw becomes the code, exactly —
+      real SVG paths for freehand lines, real positioned <code>&lt;div&gt;</code>s for shapes.
+      No AI guessing what you meant. Copy it and use it.
+    </p>
+  </div>
+</header>
+
+<section class="section">
+  <div class="container">
+    <div class="blueprint-layout">
+
+      <div class="blueprint-toolbar" role="toolbar" aria-label="Drawing tools">
+        <div class="tool-group">
+          <button type="button" class="tool-btn active" data-tool="pencil" title="Pencil — freehand line">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"></path><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"></path></svg>
+            <span>Pencil</span>
+          </button>
+          <button type="button" class="tool-btn" data-tool="rect" title="Rectangle">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect></svg>
+            <span>Rectangle</span>
+          </button>
+          <button type="button" class="tool-btn" data-tool="ellipse" title="Circle / ellipse">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="12" rx="9" ry="7"></ellipse></svg>
+            <span>Circle</span>
+          </button>
+        </div>
+
+        <div class="tool-group">
+          <label class="tool-field">
+            <span>Color</span>
+            <input type="color" id="colorInput" value="#d97d4a">
+          </label>
+          <label class="tool-field">
+            <span>Fill shapes</span>
+            <input type="checkbox" id="fillInput" checked>
+          </label>
+          <label class="tool-field">
+            <span>Thickness</span>
+            <input type="range" id="widthInput" min="1" max="12" value="3">
+          </label>
+        </div>
+
+        <div class="tool-group">
+          <button type="button" class="btn btn-ghost" id="undoBtn">Undo</button>
+          <button type="button" class="btn btn-ghost" id="clearBtn">Clear</button>
+        </div>
+      </div>
+
+      <div class="blueprint-canvas-wrap">
+        <svg id="blueprintCanvas" class="blueprint-canvas" viewBox="0 0 800 480" aria-label="Drawing canvas"></svg>
+      </div>
+
+      <div class="blueprint-output">
+        <div class="pane-label">Your code</div>
+        <pre id="codeOutput" class="blueprint-code"><code>&lt;!-- draw something to see the code --&gt;</code></pre>
+        <button type="button" class="btn btn-soft" id="copyBtn">Copy code</button>
+        <span class="blueprint-copied" id="copiedMsg" role="status" aria-live="polite"></span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>made by @NanouuSymeon</span>
+    <ul class="footer-links">
+      <li><a href="learn.html">Learn</a></li>
+      <li><a href="playground.html">Playground</a></li>
+      <li><a href="blueprint.html">Blueprint</a></li>
+      <li><a href="newspaper.html">Newspaper</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/blueprint.js"></script>
+</body>
+</html>

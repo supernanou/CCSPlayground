@@ -46,14 +46,14 @@ function renderModuleNav(level, navEl, searchEl, draw) {
 
 let solved = new Set();
 try {
-  solved = new Set(JSON.parse(localStorage.getItem("cssCozySolved") || "[]"));
+  solved = new Set(JSON.parse(localStorage.getItem("cssArcadeSolved") || "[]"));
 } catch (e) {
   solved = new Set();
 }
 
 function persistSolved() {
   try {
-    localStorage.setItem("cssCozySolved", JSON.stringify([...solved]));
+    localStorage.setItem("cssArcadeSolved", JSON.stringify([...solved]));
   } catch (e) {
     /* ignore — private browsing / blocked storage */
   }

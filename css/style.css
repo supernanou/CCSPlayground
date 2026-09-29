@@ -1,5 +1,5 @@
 /* ==========================================================================
-   CSS Cozy — shared theme
+   CSS Arcade — shared theme
    Butter yellow, cream, warm ink. Simple, minimal, soft edges.
    ========================================================================== */
 
@@ -577,6 +577,7 @@ p {
   padding-bottom: 8px;
   border-bottom: 1px solid var(--border);
   color: var(--ink-soft);
+  scroll-margin-top: 90px;
 }
 
 .module-heading:first-child {
@@ -771,7 +772,7 @@ textarea.css-editor:focus {
   border-bottom: 4px double var(--ink);
 }
 
-.masthead .issue-line {
+.issue-line {
   display: flex;
   justify-content: space-between;
   font-size: 0.78rem;
@@ -781,7 +782,7 @@ textarea.css-editor:focus {
   border-top: 2px dotted var(--border);
   border-bottom: 2px dotted var(--border);
   padding: 8px 0;
-  margin-top: 14px;
+  margin-bottom: 24px;
 }
 
 .masthead h1 {
@@ -896,11 +897,28 @@ textarea.css-editor:focus {
   white-space: pre-wrap;
 }
 
+.issue-detail {
+  scroll-margin-top: 90px;
+}
+
+.issue-picker-head {
+  margin-bottom: 8px;
+}
+
+.issue-picker-head h2 {
+  font-size: 1.6rem;
+  margin-bottom: 4px;
+}
+
+.issue-picker-head p {
+  color: var(--ink-soft);
+}
+
 .archive-strip {
   display: flex;
   gap: 12px;
   overflow-x: auto;
-  padding: 4px 0 16px;
+  padding: 4px 0 28px;
 }
 
 .archive-pill {
@@ -910,14 +928,183 @@ textarea.css-editor:focus {
   border-radius: 999px;
   padding: 8px 16px;
   font-size: 0.85rem;
+  font-family: inherit;
   color: var(--ink-soft);
   white-space: nowrap;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.archive-pill:hover {
+  border-color: var(--accent-soft);
+  color: var(--ink);
 }
 
 .archive-pill.current {
   background: var(--butter);
   color: var(--ink);
   font-weight: 600;
+}
+
+.back-to-issues {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  padding: 0;
+  margin-bottom: 20px;
+  color: var(--accent);
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.back-to-issues:hover {
+  text-decoration: underline;
+}
+
+/* ---------- Blueprint ---------- */
+
+.blueprint-layout {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  grid-template-areas:
+    "toolbar toolbar"
+    "canvas  output";
+  gap: 20px;
+}
+
+.blueprint-toolbar {
+  grid-area: toolbar;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-m);
+  padding: 14px 18px;
+  box-shadow: var(--shadow);
+}
+
+.tool-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.tool-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 8px 14px;
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.tool-btn:hover {
+  border-color: var(--accent-soft);
+  color: var(--ink);
+}
+
+.tool-btn.active {
+  background: var(--butter);
+  border-color: var(--butter-deep);
+  color: var(--ink);
+}
+
+.tool-field {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+  font-weight: 600;
+}
+
+.tool-field input[type="color"] {
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-s);
+  background: none;
+  cursor: pointer;
+}
+
+.tool-field input[type="range"] {
+  width: 90px;
+}
+
+.blueprint-canvas-wrap {
+  grid-area: canvas;
+  background: var(--paper);
+  border: 1px dashed var(--butter-deep);
+  border-radius: var(--radius-m);
+  overflow: hidden;
+}
+
+.blueprint-canvas {
+  display: block;
+  width: 100%;
+  aspect-ratio: 800 / 480;
+  cursor: crosshair;
+  touch-action: none;
+}
+
+.blueprint-output {
+  grid-area: output;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-m);
+  padding: 18px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+}
+
+.blueprint-code {
+  background: #2f2a1e;
+  color: #f3e6c4;
+  border-radius: var(--radius-s);
+  padding: 14px 16px;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  line-height: 1.6;
+  overflow: auto;
+  max-height: 320px;
+  margin: 0 0 14px;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.blueprint-copied {
+  display: inline-block;
+  margin-left: 12px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #5c7c4f;
+}
+
+@media (max-width: 900px) {
+  .blueprint-layout {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "toolbar"
+      "canvas"
+      "output";
+  }
 }
 
 /* ---------- Utility ---------- */
