@@ -15,7 +15,7 @@
 <nav class="site-nav">
   <div class="container">
     <a class="brand" href="index.html">
-      <span class="brand-mark"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"></circle><line x1="12" y1="2" x2="12" y2="5"></line><line x1="12" y1="19" x2="12" y2="22"></line><line x1="2" y1="12" x2="5" y2="12"></line><line x1="19" y1="12" x2="22" y2="12"></line><line x1="4.2" y1="4.2" x2="6.3" y2="6.3"></line><line x1="17.7" y1="17.7" x2="19.8" y2="19.8"></line><line x1="4.2" y1="19.8" x2="6.3" y2="17.7"></line><line x1="17.7" y1="6.3" x2="19.8" y2="4.2"></line></svg></span> CSS Arcade
+      CSS Arcade
     </a>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
@@ -88,6 +88,48 @@
             tooltip and popover JavaScript. None of that requires a build step, a bundle, or a
             dependency you'll be patching in three years.
           </p>
+
+          <figure class="article-figure">
+            <svg viewBox="0 0 680 260" role="img" aria-labelledby="fig1title">
+              <title id="fig1title">Four tasks that used to need JavaScript, now done natively in CSS</title>
+              <text x="16" y="24" style="font-size:12px; font-weight:700; fill:var(--ink-faint); letter-spacing:0.06em; text-transform:uppercase;">Task</text>
+              <text x="280" y="24" style="font-size:12px; font-weight:700; fill:var(--ink-faint); letter-spacing:0.06em; text-transform:uppercase;">Used to need</text>
+              <text x="452" y="24" style="font-size:12px; font-weight:700; fill:var(--ink-faint); letter-spacing:0.06em; text-transform:uppercase;">Now, natively</text>
+              <line x1="16" y1="34" x2="664" y2="34" style="stroke:var(--border); stroke-width:1;"></line>
+
+              <text x="16" y="64" dominant-baseline="middle" style="font-size:14px; fill:var(--ink);">Style based on children</text>
+              <line x1="260" y1="58" x2="268" y2="70" style="stroke:var(--ink-faint); stroke-width:2; stroke-linecap:round;"></line>
+              <line x1="260" y1="70" x2="268" y2="58" style="stroke:var(--ink-faint); stroke-width:2; stroke-linecap:round;"></line>
+              <text x="280" y="64" dominant-baseline="middle" style="font-size:13px; fill:var(--ink-soft);">JavaScript</text>
+              <polyline points="430,64 434,69 442,58" style="fill:none; stroke:var(--success); stroke-width:2.5; stroke-linecap:round; stroke-linejoin:round;"></polyline>
+              <text x="452" y="64" dominant-baseline="middle" style="font-size:13px; font-family:var(--mono); fill:var(--accent);">:has()</text>
+
+              <text x="16" y="110" dominant-baseline="middle" style="font-size:14px; fill:var(--ink);">Respond to own size</text>
+              <line x1="260" y1="104" x2="268" y2="116" style="stroke:var(--ink-faint); stroke-width:2; stroke-linecap:round;"></line>
+              <line x1="260" y1="116" x2="268" y2="104" style="stroke:var(--ink-faint); stroke-width:2; stroke-linecap:round;"></line>
+              <text x="280" y="110" dominant-baseline="middle" style="font-size:13px; fill:var(--ink-soft);">JavaScript</text>
+              <polyline points="430,110 434,115 442,104" style="fill:none; stroke:var(--success); stroke-width:2.5; stroke-linecap:round; stroke-linejoin:round;"></polyline>
+              <text x="452" y="110" dominant-baseline="middle" style="font-size:13px; font-family:var(--mono); fill:var(--accent);">@container</text>
+
+              <text x="16" y="156" dominant-baseline="middle" style="font-size:14px; fill:var(--ink);">Nest selectors</text>
+              <line x1="260" y1="150" x2="268" y2="162" style="stroke:var(--ink-faint); stroke-width:2; stroke-linecap:round;"></line>
+              <line x1="260" y1="162" x2="268" y2="150" style="stroke:var(--ink-faint); stroke-width:2; stroke-linecap:round;"></line>
+              <text x="280" y="156" dominant-baseline="middle" style="font-size:13px; fill:var(--ink-soft);">Sass</text>
+              <polyline points="430,156 434,161 442,150" style="fill:none; stroke:var(--success); stroke-width:2.5; stroke-linecap:round; stroke-linejoin:round;"></polyline>
+              <text x="452" y="156" dominant-baseline="middle" style="font-size:13px; font-family:var(--mono); fill:var(--accent);">nesting</text>
+
+              <text x="16" y="202" dominant-baseline="middle" style="font-size:14px; fill:var(--ink);">Position a tooltip</text>
+              <line x1="260" y1="196" x2="268" y2="208" style="stroke:var(--ink-faint); stroke-width:2; stroke-linecap:round;"></line>
+              <line x1="260" y1="208" x2="268" y2="196" style="stroke:var(--ink-faint); stroke-width:2; stroke-linecap:round;"></line>
+              <text x="280" y="202" dominant-baseline="middle" style="font-size:13px; fill:var(--ink-soft);">JavaScript</text>
+              <polyline points="430,202 434,207 442,196" style="fill:none; stroke:var(--success); stroke-width:2.5; stroke-linecap:round; stroke-linejoin:round;"></polyline>
+              <text x="452" y="202" dominant-baseline="middle" style="font-size:13px; font-family:var(--mono); fill:var(--accent);">anchor-name</text>
+
+              <line x1="16" y1="228" x2="664" y2="228" style="stroke:var(--border); stroke-width:1;"></line>
+              <text x="16" y="248" style="font-size:12px; fill:var(--ink-faint);">Four jobs CSS quietly took over from JavaScript.</text>
+            </svg>
+          </figure>
+
           <p>
             The practical case is just as strong as the philosophical one. CSS now runs more of
             the UI on the compositor thread instead of the main thread, which means the
@@ -96,6 +138,28 @@
             getting genuinely good at it keeps paying out, long after this month's framework has
             been replaced by next month's.
           </p>
+
+          <figure class="article-figure">
+            <svg viewBox="0 0 680 160" role="img" aria-labelledby="fig2title">
+              <title id="fig2title">JavaScript animations compete for time on the main thread; CSS animations run on their own compositor thread</title>
+              <text x="16" y="20" style="font-size:13px; font-weight:600; fill:var(--ink-soft);">JavaScript — main thread</text>
+              <rect x="16" y="30" width="648" height="28" rx="6" style="fill:var(--butter-soft); stroke:var(--border); stroke-width:1;"></rect>
+              <rect x="16" y="30" width="90" height="28" rx="6" style="fill:var(--border);"></rect>
+              <rect x="112" y="30" width="70" height="28" rx="6" style="fill:var(--ink-faint);"></rect>
+              <rect x="188" y="30" width="110" height="28" rx="6" style="fill:var(--accent-soft);"></rect>
+              <rect x="304" y="30" width="60" height="28" rx="6" style="fill:var(--border);"></rect>
+              <rect x="370" y="30" width="140" height="28" rx="6" style="fill:var(--ink-faint);"></rect>
+              <rect x="516" y="30" width="148" height="28" rx="6" style="fill:var(--border);"></rect>
+              <text x="243" y="48" text-anchor="middle" dominant-baseline="middle" style="font-size:10px; font-weight:700; fill:var(--ink);">your animation</text>
+
+              <text x="16" y="100" style="font-size:13px; font-weight:600; fill:var(--ink-soft);">CSS transform / opacity — compositor thread</text>
+              <rect x="16" y="110" width="648" height="28" rx="6" style="fill:var(--butter-soft); stroke:var(--border); stroke-width:1;"></rect>
+              <rect x="16" y="110" width="648" height="28" rx="6" style="fill:var(--accent); opacity:0.9;"></rect>
+              <text x="340" y="128" text-anchor="middle" dominant-baseline="middle" style="font-size:11px; font-weight:700; fill:#fff;">your animation — uninterrupted</text>
+            </svg>
+            <figcaption>A JavaScript animation shares the main thread with layout, style, and other scripts. A CSS transform/opacity animation gets its own dedicated compositor thread — nothing to compete with.</figcaption>
+          </figure>
+
           <p>
             It's also still the most underrated skill on most teams. Plenty of developers can
             ship a feature in React or Vue and still fight the box model to center a div. Real CSS

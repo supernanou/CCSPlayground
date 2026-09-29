@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const codeOutput = document.getElementById("codeOutput");
   const copyBtn = document.getElementById("copyBtn");
+  const downloadPngBtn = document.getElementById("downloadPngBtn");
   const copiedMsg = document.getElementById("copiedMsg");
   const undoBtn = document.getElementById("undoBtn");
   const clearBtn = document.getElementById("clearBtn");
@@ -174,6 +175,50 @@ document.addEventListener("DOMContentLoaded", () => {
     } catch (e) {
       copiedMsg.textContent = "Couldn't copy — select the code manually.";
     }
+  });
+
+  downloadPngBtn.addEventListener("click", () => {
+    if (shapes.length === 0) {
+      copiedMsg.textContent = "Draw something first.";
+      setTimeout(() => { copiedMsg.textContent = ""; }, 1800);
+      return;
+    }
+
+    const svgClone = svg.cloneNode(true);
+    svgClone.setAttribute("width", CANVAS_W);
+    svgClone.setAttribute("height", CANVAS_H);
+    const svgString = new XMLSerializer().serializeToString(svgClone);
+    const svgBlob = new Blob([svgString], { type: "image/svg+xml;charset=utf-8" });
+    const url = URL.createObjectURL(svgBlob);
+
+    const scale = 2;
+    const img = new Image();
+    img.onload = () => {
+      const canvas = document.createElement("canvas");
+      canvas.width = CANVAS_W * scale;
+      canvas.height = CANVAS_H * scale;
+      const ctx = canvas.getContext("2d");
+      const bg = getComputedStyle(document.documentElement).getPropertyValue("--paper").trim() || "#fffdf7";
+      ctx.fillStyle = bg;
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+      URL.revokeObjectURL(url);
+
+      canvas.toBlob((blob) => {
+        const a = document.createElement("a");
+        a.href = URL.createObjectURL(blob);
+        a.download = "blueprint-sketch.png";
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+      }, "image/png");
+    };
+    img.onerror = () => {
+      copiedMsg.textContent = "Couldn't generate image.";
+      setTimeout(() => { copiedMsg.textContent = ""; }, 1800);
+    };
+    img.src = url;
   });
 
   function round(n) {

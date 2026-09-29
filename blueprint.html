@@ -15,7 +15,7 @@
 <nav class="site-nav">
   <div class="container">
     <a class="brand" href="index.html">
-      <span class="brand-mark"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"></circle><line x1="12" y1="2" x2="12" y2="5"></line><line x1="12" y1="19" x2="12" y2="22"></line><line x1="2" y1="12" x2="5" y2="12"></line><line x1="19" y1="12" x2="22" y2="12"></line><line x1="4.2" y1="4.2" x2="6.3" y2="6.3"></line><line x1="17.7" y1="17.7" x2="19.8" y2="19.8"></line><line x1="4.2" y1="19.8" x2="6.3" y2="17.7"></line><line x1="17.7" y1="6.3" x2="19.8" y2="4.2"></line></svg></span> CSS Arcade
+      CSS Arcade
     </a>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
@@ -82,13 +82,16 @@
       </div>
 
       <div class="blueprint-canvas-wrap">
-        <svg id="blueprintCanvas" class="blueprint-canvas" viewBox="0 0 800 480" aria-label="Drawing canvas"></svg>
+        <svg id="blueprintCanvas" class="blueprint-canvas" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" aria-label="Drawing canvas"></svg>
       </div>
 
       <div class="blueprint-output">
         <div class="pane-label">Your code</div>
         <pre id="codeOutput" class="blueprint-code"><code>&lt;!-- draw something to see the code --&gt;</code></pre>
-        <button type="button" class="btn btn-soft" id="copyBtn">Copy code</button>
+        <div class="blueprint-output-actions">
+          <button type="button" class="btn btn-soft" id="copyBtn">Copy code</button>
+          <button type="button" class="btn btn-ghost" id="downloadPngBtn">Download image</button>
+        </div>
         <span class="blueprint-copied" id="copiedMsg" role="status" aria-live="polite"></span>
       </div>
 
